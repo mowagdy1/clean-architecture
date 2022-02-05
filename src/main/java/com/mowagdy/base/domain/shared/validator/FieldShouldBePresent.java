@@ -26,11 +26,11 @@ public class FieldShouldBePresent<T> implements BaseValidator {
         } else if (value instanceof Double) {
             result = !value.equals(0.0);
         } else if (value instanceof Enum) {
-            result = !value.toString().toLowerCase().equals("none");
+            result = !value.toString().equalsIgnoreCase("none");
         }
 
         if (!result) {
-            throw new RequiredFieldException("Field [" + key + "] is required");
+            throw new RequiredFieldException("Field [" + key + "] is required", key);
         }
     }
 }

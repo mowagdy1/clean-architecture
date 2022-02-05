@@ -1,7 +1,10 @@
 package com.mowagdy.base.domain.user.exception;
 
-public class UserNotFoundException extends RuntimeException {
-    public UserNotFoundException(String message) {
+import com.mowagdy.base.domain.shared.exception.base.BadRequestException;
+
+public class UserNotFoundException extends BadRequestException {
+    public UserNotFoundException(String message, Long id) {
         super(message);
+        addParam("userId", id);
     }
 }

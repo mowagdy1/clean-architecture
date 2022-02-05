@@ -1,7 +1,10 @@
 package com.mowagdy.base.domain.shared.exception;
 
-public class RequiredFieldException extends RuntimeException {
-    public RequiredFieldException(String message) {
+import com.mowagdy.base.domain.shared.exception.base.BadRequestException;
+
+public class RequiredFieldException extends BadRequestException {
+    public RequiredFieldException(String message, String requiredField) {
         super(message);
+        addParam("requiredField", requiredField);
     }
 }

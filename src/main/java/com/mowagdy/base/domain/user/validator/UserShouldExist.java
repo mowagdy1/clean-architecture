@@ -18,7 +18,7 @@ public class UserShouldExist implements BaseValidator {
     @Override
     public void validateOrThrow() throws RequiredFieldException {
         if (!userRepoService.isUserExists(id)) {
-            throw new UserNotFoundException("User [" + id + "] not found.");
+            throw new UserNotFoundException("User [" + id + "] not found.", id);
         }
     }
 }
