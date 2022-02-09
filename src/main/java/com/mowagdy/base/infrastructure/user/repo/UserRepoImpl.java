@@ -1,21 +1,20 @@
-package com.mowagdy.base.infrastructure.user.reposerviceimpl;
+package com.mowagdy.base.infrastructure.user.repo;
 
 import com.mowagdy.base.domain.user.model.UserModel;
-import com.mowagdy.base.domain.user.port.UserRepoService;
+import com.mowagdy.base.domain.user.repo.UserRepo;
 import com.mowagdy.base.infrastructure.user.entity.User;
-import com.mowagdy.base.infrastructure.user.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 
-@Service
-public class UserRepoServiceImpl implements UserRepoService {
+@Component
+public class UserRepoImpl implements UserRepo {
 
-    private final UserRepo userRepo;
+    private final SpringDataUserRepo userRepo;
 
     @Autowired
-    public UserRepoServiceImpl(UserRepo userRepo) {
+    public UserRepoImpl(SpringDataUserRepo userRepo) {
         this.userRepo = userRepo;
     }
 

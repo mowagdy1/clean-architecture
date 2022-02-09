@@ -1,10 +1,10 @@
-package com.mowagdy.base.domain.user.port;
+package com.mowagdy.base.domain.user.repo;
 
 import com.mowagdy.base.domain.user.model.UserModel;
 
 import java.util.Collection;
 
-public interface UserRepoService {
+public interface UserRepo {
 
     Collection<UserModel> getAllUsers();
 
