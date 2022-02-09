@@ -2,7 +2,7 @@ package com.mowagdy.base.domain.user.model;
 
 import java.time.LocalDateTime;
 
-public class UserModel {
+public class User {
 
     private Long id;
     private String name;
@@ -10,11 +10,11 @@ public class UserModel {
     private LocalDateTime updatedAt;
 
 
-    public UserModel(String name) {
+    public User(String name) {
         this.name = name;
     }
 
-    public UserModel(Long id, String name, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public User(Long id, String name, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.name = name;
         this.createdAt = createdAt;

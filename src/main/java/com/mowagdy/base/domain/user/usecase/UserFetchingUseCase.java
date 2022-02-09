@@ -2,7 +2,7 @@ package com.mowagdy.base.domain.user.usecase;
 
 import com.mowagdy.base.domain.shared.BaseUseCase;
 import com.mowagdy.base.domain.user.dto.UserFetchingResponse;
-import com.mowagdy.base.domain.user.model.UserModel;
+import com.mowagdy.base.domain.user.model.User;
 import com.mowagdy.base.domain.user.repo.UserRepo;
 import com.mowagdy.base.domain.user.validator.UserShouldExist;
 
@@ -23,7 +23,7 @@ public class UserFetchingUseCase extends BaseUseCase<UserFetchingResponse> {
 
     @Override
     protected UserFetchingResponse process() {
-        UserModel userModel = userRepo.getSingleUser(id);
-        return new UserFetchingResponse(userModel.getId(), userModel.getName());
+        User user = userRepo.getSingleUser(id);
+        return new UserFetchingResponse(user.getId(), user.getName());
     }
 }

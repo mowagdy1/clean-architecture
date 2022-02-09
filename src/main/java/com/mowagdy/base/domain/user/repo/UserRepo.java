@@ -1,16 +1,16 @@
 package com.mowagdy.base.domain.user.repo;
 
-import com.mowagdy.base.domain.user.model.UserModel;
+import com.mowagdy.base.domain.user.model.User;
 
 import java.util.Collection;
 
 public interface UserRepo {
 
-    Collection<UserModel> getAllUsers();
+    Collection<User> getAllUsers();
 
     Boolean isUserExists(Long id);
 
-    UserModel getSingleUser(Long id);
+    User getSingleUser(Long id);
 
-    UserModel saveUser(UserModel userModel);
+    User saveUser(User user);
 }

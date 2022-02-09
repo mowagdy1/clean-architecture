@@ -1,8 +1,8 @@
 package com.mowagdy.base.infrastructure.user.repo;
 
-import com.mowagdy.base.domain.user.model.UserModel;
+import com.mowagdy.base.domain.user.model.User;
 import com.mowagdy.base.domain.user.repo.UserRepo;
-import com.mowagdy.base.infrastructure.user.entity.User;
+import com.mowagdy.base.infrastructure.user.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -19,7 +19,7 @@ public class UserRepoImpl implements UserRepo {
     }
 
     @Override
-    public Collection<UserModel> getAllUsers() {
+    public Collection<User> getAllUsers() {
         return null;
     }
 
@@ -29,13 +29,13 @@ public class UserRepoImpl implements UserRepo {
     }
 
     @Override
-    public UserModel getSingleUser(Long id) {
-        return userRepo.getById(id).toUserModel();
+    public User getSingleUser(Long id) {
+        return userRepo.getById(id).toUser();
     }
 
     @Override
-    public UserModel saveUser(UserModel userModel) {
-        User user = userRepo.save(new User(userModel));
-        return user.toUserModel();
+    public User saveUser(User user) {
+        UserEntity userEntity = userRepo.save(new UserEntity(user));
+        return userEntity.toUser();
     }
 }
